@@ -1,0 +1,12 @@
+ipykernel
+python-dotenv
+pandas
+# selenium
+# seleniumbase
+beautifulsoup4
+proxy-randomizer
+fake-useragent
+blinker==1.7.0
+selenium==4.9.1
+selenium-wire
+# undetected-chromedriver
