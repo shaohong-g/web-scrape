@@ -12,9 +12,9 @@ python -m venv .venv
 ## Pre-requisite
 ```sh
 pip install -r requirements.txt
-
+# --env HTTP_PROXY="http://ksafhlba-rotate:ovf9p2blgo9b@p.webshare.io:80"
 docker pull selenium/standalone-chrome
-docker run --rm -d -p 4444:4444 --shm-size=2g --env HTTP_PROXY="http://ksafhlba-rotate:ovf9p2blgo9b@p.webshare.io:80" selenium/standalone-chrome
+docker run --rm -d -p 4444:4444 --shm-size=2g  selenium/standalone-chrome
 
 
 ```
