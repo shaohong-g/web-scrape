@@ -1,0 +1,12 @@
+# Downgrade selenium for RemoteDriver w selenium-wire compatibility (WebDriver.__init__() got an unexpected keyword argument 'desired_capabilities')
+# Downgrade blinker for selenium-wire compatibility
+ipykernel
+python-dotenv
+pandas
+beautifulsoup4
+proxy-randomizer
+fake-useragent
+blinker==1.7.0
+selenium==4.9.1
+selenium-wire
+webdriver-manager
