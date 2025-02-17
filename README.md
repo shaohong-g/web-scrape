@@ -46,9 +46,6 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET
 | seleniumbase | `uc mode` + `proxy`   | &check;    |   |
 | **selenium-wire** | `standalone chrome` + `wire`  | &check;  | Downgrade selenium version. Refer to [requirements-downgrade.txt](./requirements-downgrade.txt)|
 
-
-
-
 ## Proxies
 - Rotating proxies (10 free proxies)
     - [https://www.webshare.io/](https://www.webshare.io/)
@@ -65,6 +62,44 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET
     - http://httpbin.org/get
     - https://httpbin.org/ip
     - https://api.ipify.org
+
+## Web-scrape
+1. Google News
+    - Google News Tab - require use of selenium *(A section within Google Search that displays news articles related to your search query, providing a wider range of news sources on a topic.)*
+        - https://www.google.com/search?q=Singapore&tbs=cdr:1,cd_min:1/1/2025,cd_max:2/2/2025&tbm=nws'
+            - encoded version: https://www.google.com/search?q=Singapore&tbs=cdr%3A1%2Ccd_min%3A1%2F1%2F2025%2Ccd_max%3A2%2F2%2F2025&tbm=nws
+        - **q=Singapore** : query
+        - **tbs=cdr:1** : search for results within a custom date range
+        - **cd_min:1/1/2025,cd_max:2/2/2025** : date range
+        - **tbm=nws** : get results from Google news
+    - News RSS page: can return only up to 100 results. More details [here](https://www.newscatcherapi.com/blog/google-news-rss-search-parameters-the-missing-documentaiton#toc-8) and [stackoverflow](https://stackoverflow.com/questions/78194686/how-to-web-scrape-google-news-headline-of-a-particular-year-e-g-news-from-2020)
+        - https://news.google.com/rss/search?q=Singapore+after:2020-06-01+before:2020-06-02&hl=en-SG&gl=SG&ceid=SG:en
+        - **q=Singapore** : query
+        - **after:2020-06-01+before:2020-06-02** : search for results within a custom date range
+        - **hl=en-SG&gl=SG&ceid=SG:en** : country, location and geolocation parameters. *(automatically append based on your location)*
+        - Can choose to leave out **/rss/** to get the google page instead of xml
+        - Others:
+            ```
+            # top news
+            https://news.google.com/rss
+
+            # by topic
+            https://news.google.com/rss/topics/<TOPIC_ID>
+            https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGRqTVhZU0FtVnVHZ0pKVGlnQVAB
+
+            # by topic section
+            https://news.google.com/rss/topics/<TOPIC_ID>/sections/<SECTION_ID>
+            https://news.google.com/rss/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp1ZEdvU0FtVnVHZ0pKVGlnQVAB/sections/CAQiSkNCQVNNUW9JTDIwdk1EWnVkR29TQldWdUxVZENHZ0pKVGlJT0NBUWFDZ29JTDIwdk1EZGljekFxQ2dvSUVnWlVaVzV1YVhNb0FBKi4IACoqCAoiJENCQVNGUW9JTDIwdk1EWnVkR29TQldWdUxVZENHZ0pKVGlnQVABUAE?hl=en-IN&gl=IN&ceid=IN%3Aen
+
+            # by custom search keyword
+            https://news.google.com/rss/search?q=<KEYWORD>
+            https://news.google.com/rss/search?q=instagram
+
+            # by country and language
+            https://news.google.com/rss?hl=<LANGUAGE_CODE>&gl=<COUNTRY_CODE>&ceid=<COUNTRY_CODE>:<LANGUAGE_CODE>
+            https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en
+            ```
+2. *Pending...*
 
 ## Guide
 - https://www.scrapehero.com/how-to-rotate-proxies-and-ip-addresses-using-python-3/

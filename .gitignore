@@ -3,3 +3,4 @@
 downloaded_files/**/*
 screenshot.png
 latest_logs/**/*
+__pycache__
