@@ -1,0 +1,14 @@
+{
+    "parameters": {
+        "search_query": "Goldman Sachs litigation",
+        "start_time": "2000-01-01",
+        "end_time": "2025-02-19",
+        "scrape_period": 30,
+        "add_url_parameters": {}
+    },
+    "iter_no": 307,
+    "to_time": "2025-02-19",
+    "url": "https://news.google.com/rss/search?q=Goldman+Sachs+litigation+after%3A2025-02-18+before%3A2025-02-19",
+    "record_count": 1691,
+    "save_state_path": "./data/scrape_state_20250219101105.json"
+}

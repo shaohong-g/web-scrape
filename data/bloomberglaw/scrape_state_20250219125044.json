@@ -1,0 +1,15 @@
+{
+    "parameters": {
+        "search_query": "Goldman Sachs",
+        "start_time": "2000-01-01",
+        "end_time": "2025-02-19",
+        "scrape_period": 30,
+        "add_url_parameters": {},
+        "fetch_limit": 100
+    },
+    "iter_no": 307,
+    "to_time": "2025-02-19",
+    "url": "https://news.bloomberglaw.com/api/v1/rss/litigation?query=Goldman+Sachs&startDate=2025-02-18&endDate=2025-02-19&limit=100",
+    "record_count": 293,
+    "save_state_path": "./data/scrape_state_20250219125044.json"
+}
